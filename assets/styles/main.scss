@@ -1,0 +1,32 @@
+$title-font : "Open Sans", Arial, sans-serif;
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+.main-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.video-block {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: wrap;
+  margin: 20px 0;
+  &__item {
+    margin: 10px 0;
+
+    img {
+
+    }
+  }
+  &__title {
+    margin: 10px 0 0 0;
+
+    font: 20px/22px $title-font;
+    text-align: center;
+
+  }
+}

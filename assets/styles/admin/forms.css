@@ -1,0 +1,36 @@
+.default-form .form-row {
+  display: block;
+  overflow: hidden; }
+.default-form label {
+  margin: 10px 0; }
+.default-form input {
+  padding: .5em .6em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  vertical-align: middle;
+  box-sizing: border-box; }
+  .default-form input:focus {
+    outline: 0;
+    border-color: #129FEA; }
+.default-form .horizontal-row {
+  margin: 20px 0; }
+  .default-form .horizontal-row label {
+    display: inline-block;
+    margin: 0 10px; }
+  .default-form .horizontal-row input {
+    display: inline-block; }
+  .default-form .horizontal-row select {
+    display: inline-block; }
+.default-form .block-row label {
+  display: block;
+  width: 100%;
+  margin: 10px 0; }
+.default-form .block-row input {
+  display: block;
+  width: 100%;
+  margin: 10px 0; }
+.default-form .block-row select {
+  display: block;
+  margin: 10px 0; }

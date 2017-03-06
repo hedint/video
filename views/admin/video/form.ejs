@@ -1,0 +1,26 @@
+<% _.defaults(item, {
+      name : '',
+      description : '',
+      url : ''
+  }) %>
+<form class="default-form"  name="add_video" method="post" action="">
+  <legend><%= title %></legend>
+  <div class="default-form__content">
+    <div class="block-row">
+      <label>Название видео</label>
+      <input name="name" type="text" value="<%= item.name %>"/>
+    </div>
+    <div class="block-row">
+      <label>Описание видео</label>
+      <textarea name="description"><%= item.description%></textarea>
+    </div>
+    <div class="block-row">
+      <label>URL</label>
+      <input type="text" name="url"  value="<%= item.url%>"/>
+    </div>
+    <div class="block-row">
+      <input type="submit" value="Сохранить"/>
+    </div>
+  </div>
+
+</form>

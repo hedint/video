@@ -1,0 +1,105 @@
+
+.default-form {
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  box-sizing: border-box;
+  border-color: #337ab7;
+  &__content {
+    padding: 15px;
+  }
+
+
+  legend {
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.5em;
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #337ab7;
+    box-sizing: border-box;
+  }
+  .form-row {
+    display: block;
+    overflow: hidden;
+  }
+  label {
+    margin: 10px 0;
+  }
+
+  input[type="text"], input[type="email"], input[type="password"] {
+    padding: .5em .6em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    &:focus {
+      outline: 0;
+      border-color: #129FEA;
+    }
+  }
+  input[type="submit"] {
+    padding: .5em .6em;
+    display: inline-block;
+    max-width: 300px;
+    text-align: center;
+    background-color: #337ab7;
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #ffffff;
+    border: none;
+    text-transform: uppercase;
+    &:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+    &:active {
+      margin: 1px 1px 0 0;
+
+    }
+  }
+  .horizontal-row {
+    margin: 20px 0;
+    label {
+      display: inline-block;
+      margin: 0 10px;
+    }
+    input {
+      display: inline-block;
+    }
+    select {
+      display: inline-block;
+    }
+  }
+  .block-row {
+    margin: 10px 0;
+
+    label {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+    }
+    input {
+      display: block;
+      width: 100%;
+
+    }
+    select {
+      display: block;
+      margin: 10px 0;
+    }
+  }
+
+
+}
+
