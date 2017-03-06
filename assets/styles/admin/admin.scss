@@ -1,2 +1,45 @@
 @import '../vendor/normalize';
 @import "forms";
+$button_font: Arial, sans-serif;
+
+.admin-main-wrapper {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  justify-content: flex-start;
+
+}
+.admin-nav {
+  margin-right: 20px;
+  &__item {
+    a {
+      display: block;
+      height: 30px;
+      font: 16px/30px $button_font;
+      width: 100%;
+      color: #ffffff;
+      text-decoration: none;
+      background-color: #337ab7;
+      border-bottom: 2px solid lighten(#337ab7, 5%);
+      padding: 0 10px;
+      box-sizing: border-box;
+      text-align: center;
+      &:visited {
+        color: #ffffff;
+      }
+      &:hover {
+        background-color: lighten(#337ab7, 10%);
+
+      }
+    }
+  }
+}
+.admin-content-wrapper {
+
+}
+.video-list {
+  margin: 20px 0;
+  
+}

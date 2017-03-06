@@ -30,14 +30,14 @@ module.exports = {
         description : params.description,
         url : params.url
       };
-      Video.create(category).exec((err, item) => {
+      Category.create(category).exec((err, item) => {
         return res.redirect(controller.list);
       });
     }
   },
   edit : (req, res) => {
     if (req.method === 'GET') {
-      Video.findOne({id : parseInt(req.params.id, 10)}).exec((err, item) => {
+      Category.findOne({id : parseInt(req.params.id, 10)}).exec((err, item) => {
         return res.view(controller.form, {layout: controller.layout, title : 'Редактировать категорию', item});
       });
     }
@@ -49,20 +49,20 @@ module.exports = {
         url : params.url
       };
 
-      Video.update({id: parseInt(req.params.id, 10)}, category).exec((err, item) => {
+      Category.update({id: parseInt(req.params.id, 10)}, category).exec((err, item) => {
         return res.redirect(controller.list);
       });
     }
   },
   delete : (req, res)=> {
     if (req.method === 'GET') {
-      Video.destroy({id: parseInt(req.params.id, 10)}).exec((err, item) => {
+      Category.destroy({id: parseInt(req.params.id, 10)}).exec((err, item) => {
         return res.redirect(controller.list);
       });
     }
   },
   list : (req, res) => {
-    Video.find().exec((err, items) => {
+    Category.find().exec((err, items) => {
       return res.view(controller.list_view, {layout: controller.layout, items});
     });
   }

@@ -1,5 +1,5 @@
 <h3 class="small-title">Список категорий</h3>
-<a class="" href="/admin/video/add">Добавить категорию</a>
+<a class="" href="/admin/category/add">Добавить категорию</a>
 
 <br/>
 
@@ -9,8 +9,8 @@
 
   <div class="video-list__item"><%= item.id%>
     <%= item.name%>
-    <a href="/admin/video/edit/<%= item.id %>">Редактировать</a>
-    <a href="/admin/video/delete/<%= item.id %>">Удалить</a>
+    <a href="/admin/category/edit/<%= item.id %>">Редактировать</a>
+    <a href="/admin/category/delete/<%= item.id %>">Удалить</a>
   </div>
   <% })
  %>
