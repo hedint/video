@@ -19,6 +19,9 @@ module.exports = {
     description : {
       type : 'text',
       defaultsTo : ''
+    },
+    categories: {
+      type : 'array'
     }
   }
 };

@@ -1,7 +1,8 @@
 <% _.defaults(item, {
       name : '',
       description : '',
-      url : ''
+      url : '',
+  categories : []
   }) %>
 <form class="default-form"  name="add_video" method="post" action="">
   <legend><%= title %></legend>
@@ -17,6 +18,18 @@
     <div class="block-row">
       <label>URL</label>
       <input type="text" name="url"  value="<%= item.url%>"/>
+    </div>
+    <div class="block-row">
+      <label>Категории</label>
+      <select multiple="multiple" name="categories[]"  value="<%= item.url%>">
+        <% _.each(categories, (category) => {
+        console.log(item.categories);
+        console.log(category);
+          var selected = (item.categories.indexOf(category.id) !== -1)?'selected="selected"':'';
+        %>
+        <option <%- selected %> value="<%= category.id%>"><%= category.name %></option>
+        <% }) %>
+      </select>
     </div>
     <div class="block-row">
       <input type="submit" value="Сохранить"/>

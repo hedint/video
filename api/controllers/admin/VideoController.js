@@ -7,15 +7,22 @@
 
 module.exports = {
 	add : (req, res) => {
-	  if (req.method === 'GET') {
-      return res.view('admin/video/form', {layout: 'admin/admin_layout', title:'Добавить видео', item : {}});
+      if (req.method === 'GET') {
+        Category.find({}).exec(function (err, categories) {
+          return res.view('admin/video/form', {layout: 'admin/admin_layout',
+            title:'Добавить видео',
+            item : {},
+            categories
+          });
+        });
     }
     if (req.method === 'POST') {
 	    let params = req.allParams();
 	    let video = {
 	      name : params.name,
         description : params.description,
-        url : params.url
+        url : params.url,
+          categories: params.categories.map((category_id) => parseInt(category_id))
       };
 	    Video.create(video).exec((err, item) => {
 	      return res.redirect('/admin/video/list');
@@ -25,7 +32,14 @@ module.exports = {
   edit : (req, res) => {
     if (req.method === 'GET') {
       Video.findOne({id : parseInt(req.params.id, 10)}).exec((err, item) => {
-        return res.view('admin/video/form', {layout: 'admin/admin_layout', title : 'Редактировать видео', item});
+        console.log(item);
+        Category.find({}).exec(function (err, categories) {
+          return res.view('admin/video/form', {layout: 'admin/admin_layout',
+            title : 'Редактировать видео',
+            item,
+            categories
+          });
+        });
       });
     }
     if (req.method === 'POST') {
@@ -33,7 +47,8 @@ module.exports = {
       let video = {
         name : params.name,
         description : params.description,
-        url : params.url
+        url : params.url,
+        categories: params.categories.map((category_id) => parseInt(category_id))
       };
 
       Video.update({id: parseInt(req.params.id, 10)}, video).exec((err, item) => {
