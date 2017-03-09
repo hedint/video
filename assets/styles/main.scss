@@ -1,32 +1,160 @@
-$title-font : "Open Sans", Arial, sans-serif;
-
+$title-font : "Comic Sans MS", sans-serif;
+$base_width : 1100px;
 
 html, body {
   margin: 0;
   padding: 0;
 }
+
+h1 {
+  margin: 25px 0;
+}
+h2 {
+  margin: 20px;
+}
+h3 {
+  margin: 15px 0;
+}
+h4 {
+  margin: 10px 0;
+}
+body {
+  background: url('http://murka.lark.ru/img/fon/fabric/9-chernyy-pattern-tkani.png') repeat;
+}
+
+.main-title {
+  color: lightgray;
+
+}
 .main-wrapper {
   width: 100%;
-  max-width: 900px;
+  max-width: $base_width;
   margin: 0 auto;
+  overflow: hidden;
+}
+.content-wrapper {
+  float: left;
+  max-width: 860px;
 }
 .video-block {
-  display: flex;
-  justify-content: space-around;
-  flex-flow: wrap;
-  margin: 20px 0;
-  &__item {
-    margin: 10px 0;
+  overflow: hidden;
 
+  &__item {
+    text-decoration: none;
+    cursor: pointer;
+    float: left;
+    position: relative;
+    margin: 0 0 10px 0;
+    overflow: hidden;
+
+    &:nth-child(3n+1) {
+      margin: 0 10px 10px 0;
+      img {
+        width: 570px;
+        height: 390px;
+      }
+      .video-block__title {
+        height: 60px;
+        font-size: 24px;
+
+      }
+    }
+
+    &:hover {
+      filter: brightness(110%);
+      img {
+        -webkit-transform: scale(1.1);
+      }
+    }
     img {
+      width: 280px;
+      height: 190px;
+      float: left;
+      -webkit-transition: all 0.5s ease-out;
 
     }
   }
   &__title {
-    margin: 10px 0 0 0;
-
-    font: 20px/22px $title-font;
+    position: absolute;
+    display: flex;
+    background:rgba(0,0,0,0.75);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    bottom:0;
+    color: #ffffff;
+    font: 18px/20px $title-font;
     text-align: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    span {
 
+    }
+
+  }
+}
+
+.nav-wrapper {
+  float: left;
+
+}
+
+.nav {
+  width:100%;
+  max-width: 200px;
+  margin-right: 20px;
+  &__title {
+    font: 20px/22px $title-font;
+    color: #ffffff;;
+  }
+  &__item {
+    font: 16px/18px $title-font;
+    cursor: pointer;
+    display: flex;
+    text-decoration: underline;
+    color: #ffffff;
+    height: 30px;
+    align-items: center;
+    justify-content: flex-start;
+
+    text-align: left;
+    &:hover {
+      font-size: 20px;
+
+      transition: font 0.3s ease;
+    }
+  }
+}
+
+.header {
+  &__content {
+    max-width: $base_width;
+    margin: 0 auto;
+  }
+}
+.footer {
+  background: #2e3334;;
+  color: lightgray;
+  margin-top: 80px;
+
+  &__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 50px;
+
+    overflow: hidden;
+    p {
+      font: 12px/14px Verdana, sans-serif;
+      max-width: 600px;
+      margin: 16px 0;
+
+    }
+
+  }
+  &__alert-image {
+    float: left;
+    height: 27px;
+    margin: 16px;
   }
 }

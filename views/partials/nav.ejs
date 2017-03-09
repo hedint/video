@@ -1,0 +1,6 @@
+<div class="nav">
+  <h4 class="nav__title">Категории</h4>
+  <% _.each(categories, (category) => { %>
+  <a class="nav__item" href="/category/<%=category.id%>"><%= category.name %></a>
+  <%})%>
+</div>

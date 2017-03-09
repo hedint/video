@@ -1,9 +1,11 @@
 <% _.defaults(item, {
-      name : '',
-      description : '',
-      url : '',
+  name : '',
+  description : '',
+  full_description : '',
+  url : '',
+  img_url : '',
   categories : []
-  }) %>
+}) %>
 <form class="default-form"  name="add_video" method="post" action="">
   <legend><%= title %></legend>
   <div class="default-form__content">
@@ -16,15 +18,24 @@
       <textarea name="description"><%= item.description%></textarea>
     </div>
     <div class="block-row">
-      <label>URL</label>
-      <input type="text" name="url"  value="<%= item.url%>"/>
+      <label>Детальное описание</label>
+      <textarea name="full_description" cols="70" rows="8"><%= item.full_description %></textarea>
+    </div>
+    <div class="block-row">
+      <label>Ссылка на видео-файл</label>
+      <input type="text" name="url"  value="<%= item.url %>"/>
+    </div>
+    <div class="block-row">
+      <label>Ссылка на картинку</label>
+      <input type="text" name="img_url"  value="<%= item.img_url %>"/>
+      <% if (item.img_url) { %>
+          <img src="<%= item.img_url %>"/>
+      <% } %>
     </div>
     <div class="block-row">
       <label>Категории</label>
-      <select multiple="multiple" name="categories[]"  value="<%= item.url%>">
+      <select multiple="multiple" name="categories[]" >
         <% _.each(categories, (category) => {
-        console.log(item.categories);
-        console.log(category);
           var selected = (item.categories.indexOf(category.id) !== -1)?'selected="selected"':'';
         %>
         <option <%- selected %> value="<%= category.id%>"><%= category.name %></option>

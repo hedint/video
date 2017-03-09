@@ -1,4 +1,21 @@
-<h3>It works! <%= title %></h3>
+
+<div class="header">
+  <div class="header__content">
+    <h1 class="main-title">Горячие девочки точка ком <%= title %></h1>
+  </div>
+</div>
 <div class="main-wrapper">
-  <% include partials/video-block %>
+  <div class="nav-wrapper">
+    <% include partials/nav %>
+  </div>
+  <div class="content-wrapper">
+    <% include partials/video-block %>
+  </div>
+</div>
+<div class="footer">
+  <div class="footer__content">
+    <img class="footer__alert-image" src="https://s00.yaplakal.com/pics/pics_original/2/5/6/9333652.jpg" alt="18+"/>
+    <p>Сайт предназначен для пользователей, достигших возраста 18 лет. Просматривая медиа-контент на сайте,
+    вы подтверждаете, что достигли возраста 18 лет.</p>
+  </div>
 </div>

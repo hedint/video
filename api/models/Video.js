@@ -12,6 +12,10 @@ module.exports = {
       type : 'string',
       defaultsTo : ''
     },
+    img_url : {
+      type : 'string',
+      defaultsTo : ''
+    },
     name : {
       type : 'string',
       defaultsTo : ''
@@ -19,6 +23,10 @@ module.exports = {
     description : {
       type : 'text',
       defaultsTo : ''
+    },
+    full_description : {
+      type: 'text',
+      defaultsTo: ''
     },
     categories: {
       type : 'array'

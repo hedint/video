@@ -7,7 +7,20 @@
 
 module.exports = {
 	index : function (req, res) {
-	  return res.view('myhome', {title: 'title'});
+	  function allDoneResponse (err, results) {
+      console.log(results);
+      return res.view('myhome', {title: 'title', videos : results.videos, categories: results.categories});
+
+    }
+	  async.auto({
+	    videos : (cb) => {
+	      Video.find({}).exec(cb);
+      },
+      categories: (cb) => {
+	      Category.find({}).exec(cb);
+      }
+    }, allDoneResponse);
+
   }
 };
 
