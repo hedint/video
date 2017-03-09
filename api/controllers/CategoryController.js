@@ -17,6 +17,6 @@ controller.delete = `/admin/${controller.name}/delete`;
 
 
 module.exports = {
-  
+
 };
 
